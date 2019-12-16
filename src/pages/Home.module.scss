@@ -1,0 +1,54 @@
+.home {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  position: relative;
+  max-width: 30rem;
+  width: 95%;
+}
+
+.input {
+  padding: 2rem;
+  font-size: 1.5rem;
+  padding-right: 7rem;
+  border-radius: 10px;
+  border: 1px solid whitesmoke;
+  box-shadow: 0 0 0.5rem 0 whitesmoke;
+  font-family: 'Open Sans', sans-serif;
+  transition: all 200ms;
+  width: 100%;
+  box-sizing: border-box;
+
+  &:focus {
+    box-shadow: 0 0 0.5rem 0 lightgrey;
+    outline: none;
+  }
+}
+
+.button {
+  padding: 1rem;
+  font-size: 1.5rem;
+  position: absolute;
+  right: 0;
+  min-height: 100%;
+  width: 5rem;
+  color: grey;
+  background-color: white;
+  border: none;
+  border: 1px solid whitesmoke;
+  border-left: none;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  cursor: pointer;
+  transition: all 200ms;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    background-color: lightgrey;
+  }
+}

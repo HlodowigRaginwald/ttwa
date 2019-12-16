@@ -1,26 +1,67 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import PropTypes from 'prop-types';
 
-function App() {
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from 'react-router-dom';
+
+import Home from './pages/Home';
+import Search from './pages/Search';
+import Login from './pages/Login';
+import BrowseAlbums from './pages/BrowseAlbums';
+import Header from './components/Header';
+import { isConnected } from './spotifyConnect';
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Router>
+        <Switch>
+          <Route exact path="/login">
+            <Login />
+          </Route>
+          <PrivateRoute exact path="/">
+            <Home />
+          </PrivateRoute>
+          <PrivateRoute exact path="/search">
+            <Search />
+          </PrivateRoute>
+          <PrivateRoute exact path="/:artistId/albums">
+            <BrowseAlbums />
+          </PrivateRoute>
+          <PrivateRoute exact path="*">
+            <Redirect to="/" />
+          </PrivateRoute>
+        </Switch>
+      </Router>
+    </>
   );
 }
 
-export default App;
+function PrivateRoute({ children, ...rest }) {
+  const render = () => (isConnected() ? (
+    children
+  ) : (
+    <Redirect
+      to={{
+        pathname: '/login',
+      }}
+    />
+  ));
+
+  return (
+    <Route
+      // eslint-disable-next-line react/jsx-props-no-spreading
+      {...rest}
+      render={render}
+    />
+  );
+}
+
+PrivateRoute.propTypes = {
+  children: PropTypes.node.isRequired,
+};

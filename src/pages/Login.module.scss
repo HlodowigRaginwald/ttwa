@@ -1,0 +1,35 @@
+.login {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  font-family: 'Open Sans', sans-serif;
+  padding: 2rem;
+  padding-right: 5rem;
+  background-color: white;
+  background-image: url(../assets/spotify_logo.png);
+  background-size: auto 50%;
+  background-repeat: no-repeat;
+  background-position: 90% center;
+  border: 1px solid whitesmoke;
+  font-size: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 0 1rem 0 whitesmoke;
+  cursor: pointer;
+  transition: all 200ms;
+  color: DarkSlateGrey;
+  font-weight: bold;
+
+  &:hover,
+  &:focus {
+    background-color: lightgrey;
+  }
+
+  &:active {
+    outline: none;
+    transform: scale(0.95);
+  }
+}
