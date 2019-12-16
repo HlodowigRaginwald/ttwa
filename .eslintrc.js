@@ -4,6 +4,9 @@ module.exports = {
     node: true,
     browser: true,
   },
+  plugins: [
+    "react-hooks"
+  ],
   extends: [
     'airbnb',
   ],
