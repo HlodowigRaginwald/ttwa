@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useLocation, useHistory } from 'react-router-dom';
 
-import { searchArtistByQuery } from '../spotifyApi';
+import { searchArtistByQuery } from '../services/spotifyApi';
 import Artist from '../components/Artist';
 import style from './Search.module.scss';
 

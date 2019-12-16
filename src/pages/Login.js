@@ -1,6 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { checkHashAccessToken, redirectToSpotifyConnect } from '../spotifyConnect';
+import { checkHashAccessToken, redirectToSpotifyConnect } from '../services/spotifyConnect';
 import style from './Login.module.scss';
 
 export default function LoginSpotify() {

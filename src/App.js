@@ -13,7 +13,7 @@ import Search from './pages/Search';
 import Login from './pages/Login';
 import BrowseAlbums from './pages/BrowseAlbums';
 import Header from './components/Header';
-import { isConnected } from './spotifyConnect';
+import { isConnected } from './services/spotifyConnect';
 
 export default function App() {
   return (

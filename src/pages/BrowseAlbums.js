@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { getAlbumsByArtistId, getArtistInfoByArtistId } from '../spotifyApi';
+import { getAlbumsByArtistId, getArtistInfoByArtistId } from '../services/spotifyApi';
 import Album from '../components/Album';
 import style from './BrowseAlbums.module.scss';
 
