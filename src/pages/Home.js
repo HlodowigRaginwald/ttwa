@@ -31,6 +31,7 @@ export default function Home() {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Search for an artist..."
+          aria-label="Search"
           ref={inputSearch}
           required
         />

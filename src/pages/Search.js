@@ -150,6 +150,7 @@ export default function Home() {
         <input
           type="text"
           placeholder="Search for an artist..."
+          aria-label="Search"
           onChange={(e) => setQueryInput(e.target.value)}
           value={queryInput}
           className={style.input}
