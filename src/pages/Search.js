@@ -88,6 +88,7 @@ export default function Home() {
     } else {
       updateItems();
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [query]);
 
   useEffect(() => {
